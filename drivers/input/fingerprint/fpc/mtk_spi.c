@@ -257,7 +257,7 @@ static struct attribute *fpc_attributes[] = {
 	NULL
 };
 
-static const struct attribute_group const fpc_attribute_group = {
+static const struct attribute_group fpc_attribute_group = {
 	.attrs = fpc_attributes,
 };
 
@@ -641,6 +641,7 @@ static int mtk6765_probe(struct spi_device *spidev)
 
 	dev_info(dev, "%s: ok\n", __func__);
 exit:
+	fpc = NULL;
 	set_clks(fpc,false );
 	return rc;
 }
