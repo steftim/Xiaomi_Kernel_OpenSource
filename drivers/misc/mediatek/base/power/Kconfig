@@ -4,7 +4,7 @@ config MT6765_CPU_OC
 	---help---
 	This option will overclock Helio G35 CPU.
 	See mediatek/base/power/cpufreq_v1/src/mach/mt6765/
-	If unshure, say N.
+	If unsure, say N.
 
 config MT6765_GPU_OC
 	bool "Overclock MT6765 GPU"
@@ -12,7 +12,7 @@ config MT6765_GPU_OC
 	---help---
 	This option will overclock Helio G35 GPU.
 	see mediatek/base/power/mt6765
-	If unshure, say N.
+	If unsure, say N.
 
 config MTK_CPU_FREQ
 	bool "MTK CPU FREQ"

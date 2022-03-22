@@ -777,9 +777,14 @@ info_retry:
 		sprintf(tp_info_buf, "[Vendor]shenchao,[FW]0x%02x,[IC]nt36525b\n", ts->fw_ver);
 		update_lct_tp_info(tp_info_buf, NULL);
 		break;
+
+	case TP_VENDOR_XNL:
+                sprintf(tp_info_buf, "[Vendor]XINLI,[FW]0x%02x,[IC]nt36525b\n", ts->fw_ver);
+                update_lct_tp_info(tp_info_buf, NULL);
+                break;
 	}
 #else
-	sprintf(tp_info_buf, "[Vendor]unknow,[FW]0x%02x,[IC]nt36525b\n", ts->fw_ver);
+	sprintf(tp_info_buf, "[Vendor]unknown,[FW]0x%02x,[IC]nt36525b\n", ts->fw_ver);
 	update_lct_tp_info(tp_info_buf, NULL);
 #endif
 
@@ -2129,7 +2134,9 @@ static int32_t nvt_ts_probe(struct spi_device *client)
 		memcpy(ts->boot_update_firmware_name, BOOT_UPDATE_EBBG_FIRMWARE_NAME, sizeof(BOOT_UPDATE_EBBG_FIRMWARE_NAME));
 		memcpy(ts->mp_update_firmware_name, MP_UPDATE_EBBG_FIRMWARE_NAME, sizeof(MP_UPDATE_EBBG_FIRMWARE_NAME));
 		break;
-
+	case TP_VENDOR_XNL:
+                memcpy(ts->boot_update_firmware_name, BOOT_UPDATE_XNL_FIRMWARE_NAME, sizeof(BOOT_UPDATE_XNL_FIRMWARE_NAME));
+                break; 
 	default:
 		goto err_vendor_check;
 	}
@@ -3136,6 +3143,9 @@ static int32_t __init nvt_driver_init(void)
 		} else if (strcmp(mtkfb_lcm_name,"nt36525b_vdo_hdp_panda_shengchao_drv") == 0) {
 			touch_vendor_id = TP_VENDOR_EBBG;
 			NVT_LOG("TP info: [Vendor]SHENCHAO [IC]nt36525b\n");
+		} else if (strcmp(mtkfb_lcm_name,"nt36525b_vdo_hdp_boe_xinli_drv") == 0) {
+			touch_vendor_id = TP_VENDOR_XNL;
+			NVT_LOG("TP info: [Vendor]XINLI [IC]nt36525b\n");
 		} else {
 			touch_vendor_id = TP_VENDOR_UNKNOW;
 			NVT_ERR("Unknow Touch\n");
