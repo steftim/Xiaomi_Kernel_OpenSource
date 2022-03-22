@@ -335,6 +335,74 @@
 #define CPU_DVFS_VOLT14_VPROC_CCI_C65T    61875          /* 10uV */
 #define CPU_DVFS_VOLT15_VPROC_CCI_C65T    60000          /* 10uV */
 
+
+/*
+ *
+ *
+ * MT6765 clock and voltage.
+ * L is 1 cluster, LL is 2 cluster
+ *
+ *
+ */
+
+#ifdef CONFIG_MT6765_CPU_OC
+/* C65 */
+/* for DVFS OPP table L */
+#define CPU_DVFS_FREQ0_L_C65    2301000    /* KHz */
+#define CPU_DVFS_FREQ1_L_C65    2215000    /* KHz */
+#define CPU_DVFS_FREQ2_L_C65    2139000    /* KHz */
+#define CPU_DVFS_FREQ3_L_C65    2074000    /* KHz */
+#define CPU_DVFS_FREQ4_L_C65    2009000    /* KHz */
+#define CPU_DVFS_FREQ5_L_C65    1944000    /* KHz */
+#define CPU_DVFS_FREQ6_L_C65    1879000    /* KHz */
+#define CPU_DVFS_FREQ7_L_C65    1814000    /* KHz */
+#define CPU_DVFS_FREQ8_L_C65    1750000    /* KHz */
+#define CPU_DVFS_FREQ9_L_C65    1617000    /* KHz */
+#define CPU_DVFS_FREQ10_L_C65   1484000    /* KHz */
+#define CPU_DVFS_FREQ11_L_C65   1351000    /* KHz */
+#define CPU_DVFS_FREQ12_L_C65   1218000    /* KHz */
+#define CPU_DVFS_FREQ13_L_C65   1085000    /* KHz */
+#define CPU_DVFS_FREQ14_L_C65    979000    /* KHz */
+#define CPU_DVFS_FREQ15_L_C65    900000    /* KHz */
+
+/* for DVFS OPP table LL */
+#define CPU_DVFS_FREQ0_LL_C65    2301000    /* KHz */
+#define CPU_DVFS_FREQ1_LL_C65    2215000    /* KHz */
+#define CPU_DVFS_FREQ2_LL_C65    2139000    /* KHz */
+#define CPU_DVFS_FREQ3_LL_C65    2074000    /* KHz */
+#define CPU_DVFS_FREQ4_LL_C65    2009000    /* KHz */
+#define CPU_DVFS_FREQ5_LL_C65    1944000    /* KHz */
+#define CPU_DVFS_FREQ6_LL_C65    1879000    /* KHz */
+#define CPU_DVFS_FREQ7_LL_C65    1814000    /* KHz */
+#define CPU_DVFS_FREQ8_LL_C65    1750000    /* KHz */
+#define CPU_DVFS_FREQ9_LL_C65    1617000    /* KHz */
+#define CPU_DVFS_FREQ10_LL_C65   1484000    /* KHz */
+#define CPU_DVFS_FREQ11_LL_C65   1351000    /* KHz */
+#define CPU_DVFS_FREQ12_LL_C65   1218000    /* KHz */
+#define CPU_DVFS_FREQ13_LL_C65   1085000    /* KHz */
+#define CPU_DVFS_FREQ14_LL_C65    979000    /* KHz */
+#define CPU_DVFS_FREQ15_LL_C65    900000    /* KHz */
+
+/* for DVFS OPP table CCI */
+#define CPU_DVFS_FREQ0_CCI_C65    1051000    /* KHz */
+#define CPU_DVFS_FREQ1_CCI_C65    1000000    /* KHz */
+#define CPU_DVFS_FREQ2_CCI_C65     955000    /* KHz */
+#define CPU_DVFS_FREQ3_CCI_C65     917000    /* KHz */
+#define CPU_DVFS_FREQ4_CCI_C65     878000    /* KHz */
+#define CPU_DVFS_FREQ5_CCI_C65     840000    /* KHz */
+#define CPU_DVFS_FREQ6_CCI_C65     801000    /* KHz */
+#define CPU_DVFS_FREQ7_CCI_C65     763000    /* KHz */
+#define CPU_DVFS_FREQ8_CCI_C65     724000    /* KHz */
+#define CPU_DVFS_FREQ9_CCI_C65     658000    /* KHz */
+#define CPU_DVFS_FREQ10_CCI_C65    592000    /* KHz */
+#define CPU_DVFS_FREQ11_CCI_C65    525000    /* KHz */
+#define CPU_DVFS_FREQ12_CCI_C65    459000    /* KHz */
+#define CPU_DVFS_FREQ13_CCI_C65    392000    /* KHz */
+#define CPU_DVFS_FREQ14_CCI_C65    339000    /* KHz */
+#define CPU_DVFS_FREQ15_CCI_C65    300000    /* KHz */
+
+#else
+
 /* C65 */
 /* for DVFS OPP table L */
 #define CPU_DVFS_FREQ0_L_C65    2301000    /* KHz */
@@ -389,6 +457,7 @@
 #define CPU_DVFS_FREQ13_CCI_C65    392000    /* KHz */
 #define CPU_DVFS_FREQ14_CCI_C65    339000    /* KHz */
 #define CPU_DVFS_FREQ15_CCI_C65    300000    /* KHz */
+#endif
 
 /* for DVFS OPP table */
 #define CPU_DVFS_VOLT0_VPROC_L_C65    111875          /* 10uV */
@@ -442,6 +511,15 @@
 #define CPU_DVFS_VOLT14_VPROC_CCI_C65    61875          /* 10uV */
 #define CPU_DVFS_VOLT15_VPROC_CCI_C65    60000          /* 10uV */
 
+/*
+ *
+ *
+ * end MT6765
+ *
+ *
+ */
+
+//MT6762
 /* C62 */
 /* for DVFS OPP table L */
 #define CPU_DVFS_FREQ0_L_C62    2001000    /* KHz */
