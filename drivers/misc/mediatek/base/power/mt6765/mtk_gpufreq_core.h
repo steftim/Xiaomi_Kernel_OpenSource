@@ -42,7 +42,7 @@
  * MT6765 segment_3 : GPU DVFS OPP table Setting
  **************************************************/
 #ifdef CONFIG_MT6765_GPU_OC
-#define SEG3_GPU_DVFS_FREQ0			(760000)	/* KHz */
+#define SEG3_GPU_DVFS_FREQ0			(880000)	/* KHz */
 #else
 #define SEG3_GPU_DVFS_FREQ0			(680000)	/* KHz */
 #endif
