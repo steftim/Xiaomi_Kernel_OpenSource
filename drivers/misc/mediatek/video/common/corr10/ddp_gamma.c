@@ -271,12 +271,28 @@ static int disp_gamma_set_lut
 		return -EFAULT;
 	}
 
+#ifdef CONFIG_MTK_VIDEOX_LIVEDISPLAY
+	if (virt_addr_valid(user_gamma_lut))
+		memcpy(gamma_lut, user_gamma_lut, sizeof(struct DISP_GAMMA_LUT_T));	
+	else
+#endif
+
 	if (copy_from_user(gamma_lut, user_gamma_lut,
 		sizeof(struct DISP_GAMMA_LUT_T)) != 0) {
+#ifdef CONFIG_MTK_VIDEOX_LIVEDISPLAY
+		GAMMA_ERR("disp_gamma_set_lut: cannot copy from user mem");
+#endif
 		ret = -EFAULT;
 		kfree(gamma_lut);
+#ifdef CONFIG_MTK_VIDEOX_LIVEDISPLAY
+	}
+
+	if (!ret) {
+       	id = gamma_lut->hw_id;
+#else
 	} else {
 		id = gamma_lut->hw_id;
+#endif
 		if (id >= 0 && id < DISP_GAMMA_TOTAL) {
 			mutex_lock(&g_gamma_global_lock);
 
