@@ -72,7 +72,8 @@ static struct zcomp_strm *zcomp_strm_alloc(struct zcomp *comp)
 bool zcomp_available_algorithm(const char *comp)
 {
 	int i = 0;
-
+	if (sysfs_streq(comp, "lz4"))
+			return false;
 	while (backends[i]) {
 		if (sysfs_streq(comp, backends[i]))
 			return true;
