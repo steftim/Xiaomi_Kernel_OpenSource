@@ -119,3 +119,4 @@ all.config
 kernel/configs/android-*.cfg
 
 out/
+build.sh
